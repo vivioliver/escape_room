@@ -1,14 +1,20 @@
 function checkIP() {
-  const ipInput = document.getElementById("ipInput").value;
+  const ipInput = document.getElementById("ipInput").value.trim();
   const result = document.getElementById("result");
 
-  // IP correto definido diretamente no JavaScript
+  // IP correto
   const correctIP = "192.168.0.1";
 
   if (ipInput === correctIP) {
-    result.innerHTML = `<div class="success">🎉 Parabéns! Você acertou o IP! <br> <strong>Você é o lendário Hacker X!</strong> 🎉</div>`;
-    document.body.style.backgroundColor = "#00ffab";
+    document.body.style.background = "linear-gradient(to bottom, #83a4d4, #b6fbff)";
+    result.innerHTML = `
+      <div class="success" style="animation: fadeIn 2s ease-in-out;">
+        🎉 Parabéns! Você acertou o IP! <br>
+        <strong>Bem-vindo, Hacker X!</strong> 
+        <p style="font-size: 1.2em;">O mundo te aguarda... 🕶️</p>
+      </div>`;
   } else {
-    result.innerText = "❌ IP incorreto. Tente novamente!";
+    result.innerHTML = "❌ IP incorreto. Tente novamente!";
+    document.body.style.background = "#0d1117"; // Volta ao fundo original
   }
 }
