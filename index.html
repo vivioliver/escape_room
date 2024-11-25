@@ -1,1 +1,43 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala de Escape - Descubra o IP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sala de Escape Virtual</h1>
+            <p>Resolva os desafios para encontrar o IP correto e desbloquear o sistema!</p>
+        </header>
+        <main>
+            <section id="challenge-1" class="challenge">
+                <h2>Desafio 1: Decifre a Mensagem</h2>
+                <p>Qual é o valor de <code>101010 (binário)</code> em decimal?</p>
+                <input type="text" id="answer-1" placeholder="Digite sua resposta">
+                <button onclick="checkAnswer(1, '42')">Verificar</button>
+                <p class="feedback" id="feedback-1"></p>
+            </section>
+            
+            <section id="challenge-2" class="challenge hidden">
+                <h2>Desafio 2: Pergunta de Redes</h2>
+                <p>Qual é o intervalo de IPs privados para classe C?</p>
+                <input type="text" id="answer-2" placeholder="Digite sua resposta">
+                <button onclick="checkAnswer(2, '192.168.0.0/16')">Verificar</button>
+                <p class="feedback" id="feedback-2"></p>
+            </section>
+            
+            <section id="final-section" class="hidden">
+                <h2>Desafio Final: Insira o IP</h2>
+                <p>Qual é o IP correto para desbloquear o sistema?</p>
+                <input type="text" id="final-ip" placeholder="Digite o IP">
+                <button onclick="checkFinalIP()">Desbloquear</button>
+                <p class="feedback" id="final-feedback"></p>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
