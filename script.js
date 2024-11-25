@@ -1,39 +1,37 @@
-// Controle dos desafios
-let currentChallenge = 1;
+function checkAnswer(challengeNumber, correctAnswer) {
+    var userAnswer = document.getElementById('answer-' + challengeNumber).value;
+    var feedback = document.getElementById('feedback-' + challengeNumber);
 
-// Verificar resposta dos desafios
-function checkAnswer(challenge, correctAnswer) {
-    const input = document.getElementById(`answer-${challenge}`).value.trim();
-    const feedback = document.getElementById(`feedback-${challenge}`);
-    
-    if (input === correctAnswer) {
-        feedback.textContent = "Resposta correta! Próximo desafio liberado.";
-        feedback.style.color = "lightgreen";
+    if (userAnswer === correctAnswer) {
+        feedback.textContent = 'Resposta correta!';
+        feedback.style.color = 'green';
         
-        // Liberar o próximo desafio
-        const nextChallenge = document.getElementById(`challenge-${challenge + 1}`);
-        if (nextChallenge) {
-            nextChallenge.classList.remove("hidden");
-        } else {
-            document.getElementById("final-section").classList.remove("hidden");
+        // Mostrar o próximo desafio
+        if (challengeNumber === 1) {
+            document.getElementById('challenge-2').classList.remove('hidden');
+        } else if (challengeNumber === 2) {
+            document.getElementById('final-section').classList.remove('hidden');
         }
     } else {
-        feedback.textContent = "Resposta incorreta. Tente novamente.";
-        feedback.style.color = "red";
+        feedback.textContent = 'Resposta errada, tente novamente.';
+        feedback.style.color = 'red';
     }
 }
 
-// Verificar o IP final
 function checkFinalIP() {
-    const correctIP = "192.168.65.65";
-    const input = document.getElementById("final-ip").value.trim();
-    const feedback = document.getElementById("final-feedback");
+    var finalIP = document.getElementById('final-ip').value;
+    var finalFeedback = document.getElementById('final-feedback');
 
-    if (input === correctIP) {
-        feedback.textContent = "🎉 Parabéns! Você desvendou o hacker!";
-        feedback.style.color = "lightgreen";
+    if (finalIP === '192.168.1.65') {  // Substitua pelo IP correto
+        finalFeedback.textContent = 'IP correto! Desbloqueando o sistema...';
+        finalFeedback.style.color = 'green';
+
+        // Revelação do hacker
+        document.getElementById('hacker-revealed').classList.remove('hidden');
     } else {
-        feedback.textContent = "❌ IP incorreto. Tente novamente.";
-        feedback.style.color = "red";
+        finalFeedback.textContent = 'IP incorreto, tente novamente.';
+        finalFeedback.style.color = 'red';
     }
+}
+
 }
