@@ -7,6 +7,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  transition: background 1.5s ease; /* Transição suave do fundo */
 }
 
 .container {
@@ -42,4 +43,21 @@ button:hover {
 #result {
   margin-top: 20px;
   font-size: 1.2em;
+}
+
+.success {
+  font-size: 1.5em;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px #000;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Animação de fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
