@@ -1,1 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
 
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.challenge {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #34495e;
+    border-radius: 8px;
+    background: #34495e;
+}
+
+.hidden {
+    display: none;
+}
+
+input {
+    padding: 10px;
+    margin-top: 10px;
+    width: 80%;
+    border: 1px solid #34495e;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #c0392b;
+}
+
+.feedback {
+    margin-top: 10px;
+    font-size: 14px;
+}
